@@ -1,6 +1,6 @@
 
 from BankAccount import BankAccount
-from savings_account import savings_account
+from savings_account import SavingsAccount
 from checking_account import checking_account
 
 
@@ -28,8 +28,8 @@ u1.print_info()
 u2.print_info()
 
 print("Creating Savings Accounts")
-u1_savings = savings_account(u1, savings_1, 1000)
-u2_savings = savings_account(u2, savings_2, 500)
+u1_savings = SavingsAccount(u1, savings_1, 1000)
+u2_savings = SavingsAccount(u2, savings_2, 500)
 u1_savings.print_info()
 u2_savings.print_info()
 
