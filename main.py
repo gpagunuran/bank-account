@@ -95,5 +95,4 @@ u1_checking.print_info()
 u1_checking.transfer(1100)
 u1_checking.print_info()
 
-
 ##
