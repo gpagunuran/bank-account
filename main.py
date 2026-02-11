@@ -28,14 +28,14 @@ u1.print_info()
 u2.print_info()
 
 print("Creating Savings Accounts")
-u1_savings = SavingsAccount(u1, savings_1, 1000)
-u2_savings = SavingsAccount(u2, savings_2, 500)
+u1_savings = SavingsAccount(u1.customer_name, savings_1, u1.routing_number, 1000)
+u2_savings = SavingsAccount(u2.customer_name, savings_2, u2.routing_number, 500)
 u1_savings.print_info()
 u2_savings.print_info()
 
 print("Creating Checking Accounts")
-u1_checking = checking_account(u1, checking_1, 2000)
-u2_checking = checking_account(u2, checking_2, 0)
+u1_checking = checking_account(u1.customer_name, u1.routing_number, checking_1, 2000)
+u2_checking = checking_account(u2.customer_name, u2.routing_number, checking_2, 0)
 u1_checking.print_info()
 u2_checking.print_info()
 
@@ -62,7 +62,7 @@ u1_savings.print_info()
 #min bal check -- should not take money out of balance
 u2_savings.print_info()
 u2_savings.withdraw(500)
-u1_savings.print_info()
+u2_savings.print_info()
 
 print("Test savings transfer")
 u1_savings.print_info()
@@ -89,10 +89,10 @@ u2_checking.withdraw(10)
 u2_checking.print_info()
 
 print("Test checking transfer")
-u1_checking.transfer(1000)
+u1_checking.transfer(1000, u1_savings)
 u1_checking.print_info()
 #check for transfer limits:
-u1_checking.transfer(1100)
+u1_checking.transfer(1100, u1_savings)
 u1_checking.print_info()
 
 ##

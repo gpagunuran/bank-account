@@ -11,15 +11,15 @@ class checking_account(BankAccount):
     def deposit(self, amount):
         self.balance += amount
         print(
-            f'Added {amount} to {self.customer_name}\'s checking account. Your current balance is now(${self.current_balance})')
+            f'Added {amount} to {self.customer_name}\'s checking account. Your current balance is now(${self.balance})')
 
 
     def withdraw(self, amount):
         if (self.balance - amount) < 0:
-            print(f"CANNOT WITHDRAW: {self.customer_name}\'s current balance (${self.balance}) is below the withdraw balance (${amount})")
+            print(f"CANNOT WITHDRAW: {self.customer_name}\'s current balance (${self.balance}) is greater than the attempted withdraw balance $({amount})")
         else:
             self.balance -= amount
-            print(f'Successfully withdrawn ${amount} From {self.customer_name}\'s account. Your current balance is now(${self.balance})')
+            print(f'Successfully withdrawn ${amount} From {self.customer_name}\'s checking account. Your current balance is now(${self.balance})')
 
 
 #transfer limitation: $1000
