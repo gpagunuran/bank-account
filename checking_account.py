@@ -3,7 +3,7 @@ from BankAccount import BankAccount
 class checking_account(BankAccount):
 
     def __init__(self, customer_name, routing_number, account_number, balance=0):
-        super().__init__(self, customer_name, routing_number)
+        super().__init__(customer_name, routing_number)
         self.account_number = account_number
         self.balance = balance
 
@@ -39,4 +39,4 @@ class checking_account(BankAccount):
         print(f"Successfully transferred ${amount}. New balance: ${self.balance}")
 
     def print_info(self):
-        print(f"{self.customer_name}'s Checking Account Balance: ${self.balance}")
+        print(f"{self.customer_name}'s Checking Account Balance: ${self.balance}\n")

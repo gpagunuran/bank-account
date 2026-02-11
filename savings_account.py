@@ -35,4 +35,6 @@ class SavingsAccount(BankAccount):
         print(f"Successfully transferred ${amount}. New balance: ${self.balance}")
 
     def print_info(self):
+        #print the balance and interest, but not the account and routing numbers
         print(f"{self.customer_name}'s Savings Account Balance: ${self.balance}")
+        print(f'Interest Rate: {self.interest_rate}\n')
