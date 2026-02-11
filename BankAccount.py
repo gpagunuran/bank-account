@@ -1,13 +1,11 @@
 #BankAccount Python Class Assignment
 #Made by Gabriel Pagunuran and Ethan Lee
 class BankAccount:
-
     bank_name = "Wells Fargo"
 
-    def __init__(self, customer_name, current_balance, minimum_balance):
+    def __init__(self, customer_name, routing_number):
         self.customer_name = customer_name
-        self.current_balance = current_balance
-        self.minimum_balance = minimum_balance
+        self.routing_number = routing_number
 
     def deposit(self, amount):
         self.current_balance += amount
@@ -20,21 +18,6 @@ class BankAccount:
             self.current_balance -= amount
             print(f'Successfully withdrawn ${amount} From {self.customer_name}\'s account. Your current balance is now(${self.current_balance})')
 
-    def print_customer_information(self):
+    def print_info(self):
         print(f'Bank Name: {self.bank_name}')
-        print(f'Customer Name: {self.customer_name}')
-        print(f'Current Balance: {self.current_balance}')
-        print(f'Minimum Balance: {self.minimum_balance}\n')
-
-
-
-p1 = BankAccount("Gabe Pagunuran", 101, 100)
-p2 = BankAccount("Ethan Lee", 9, 10)
-
-p1.print_customer_information()
-p2.print_customer_information()
-p1.withdraw(1)
-p1.withdraw(1)
-p2.withdraw(10)
-p2.deposit(10)
-p2.withdraw(5.25)
+        print(f'Customer Name: {self.customer_name}\n')
